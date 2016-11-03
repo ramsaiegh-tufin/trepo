@@ -1,0 +1,6 @@
+  - hosts: localhost
+    tasks:
+    - name: ensure git is installed
+      yum: name=git state=latest
+    - name: ensure the proper repository is cloned
+      git: repo=https://github.com/ramsaiegh-tufin/trepo.git dest=~/trepo
