@@ -4,5 +4,7 @@
       yum: name=git state=latest
       become: yes
       become_method: sudo
+    - name: retrieve petclinic
+      git: repo=https://github.com/ramsaiegh-tufin/spring-petclinic dest=~/petclinic
     - name: ensure the proper repository is cloned
-      git: repo=https://github.com/ramsaiegh-tufin/trepo.git dest=~/trepo
+      git: repo=https://github.com/ramsaiegh-tufin/trepo.git dest=~/trepo update=no
