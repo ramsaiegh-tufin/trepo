@@ -1,0 +1,14 @@
+  - hosts: localhost
+    tasks:
+    - name: ensure docker is installed
+      yum: name=docker state=latest
+      become: yes
+      become_method: sudo
+    - name: ensure ec2-user is added to docker-group
+      user: name=ec2-user group=docker
+      become: yes
+      become_method: sudo
+    - name: ensure docker is started
+      service: name=docker state=started enabled=yes
+      become: yes
+      become_method: sudo
