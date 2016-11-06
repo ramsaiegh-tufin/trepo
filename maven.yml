@@ -1,0 +1,4 @@
+  - hosts: localhost
+    tasks:
+    - name: unarchive the file
+      unarchive: copy=no creates=~/apache-maven-3.3.9 dest=~ src=http://apache.mivzakim.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
