@@ -9,10 +9,11 @@ MAINTAINER ramsaiegh
 
 
 RUN echo "Installing Maven..."
-ADD apache-maven-3.3.9 ~/apache-maven-3.3.9
-RUN export M2_HOME=~/apache-maven-3.3.9
-RUN export M2=${M2_HOME}/bin
-RUN export PATH=$M2:$PATH
+WORKDIR /root
+ADD apache-maven-3.3.9 apache-maven-3.3.9
+ENV M2_HOME=~/apache-maven-3.3.9
+ENV M2=${M2_HOME}/bin
+ENV PATH=$M2:$PATH
 
 #RUN echo "Installing tomcat6..."
 #RUN yum install -y tomcat6
