@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+   - name: build maven-add-3
+     docker_image:
+       path: .
+       name: maven-add-3

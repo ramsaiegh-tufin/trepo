@@ -1,0 +1,8 @@
+  - hosts: localhost
+    tasks:
+    - name: unarchive the file
+      unarchive: copy=no creates=/root/apache-maven-3/apache339 dest=/root/docker-maven-3/apache339 src=http://apache.mivzakim.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+    - name: build the image
+      docker_image:
+        path: "/root/maven-add-3/"
+        name: maven-add-3
